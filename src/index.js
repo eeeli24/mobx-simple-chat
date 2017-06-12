@@ -2,11 +2,14 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './components/App';
+import ChatStore from './stores/ChatStore';
+
+const chat = new ChatStore();
 
 const renderApp = () => {
   render(
     <AppContainer>
-      <App />
+      <App chat={chat} />
     </AppContainer>,
     document.getElementById('root')
   );
